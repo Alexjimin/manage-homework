@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      table, th, td{
+        border: 1px black solid;
+        border-collapse: collapse;
+        padding: 10px;
+      }
+      input {
+        background-color: red;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+
+      var doneNum = 0;
+
+      let names = ['1.(1)자료를 참고하며 읽기_내용 정리',
+                '1.(1)자료를 참고하며 읽기_이타적 디자인',
+                '2과 복습',
+                '5과 단어 리스트',
+                '5과 문법 워크시트',
+                '5과_Word Quiz',
+                'Listen and Speak 워크시트',
+                '국어1-2 본문 활동지_1.(2)면담하기',
+                '소감문 양식',
+                '증발 활동지(과제3)',
+                '진로 활동지 1차시',
+                '향수의 확산과 증발-사전학습 활동지(과제1)',
+                '확산 활동지(과제2)',
+                '활동지 - 안전 픽토그램']
+
+      var Lists = {
+
+        hTitle:function htitle(hName) {
+          var target = document.querySelector('body');
+          document.write(hName);
+        },
+
+        hButton:function hbutton(self) {
+          var target = document.querySelector('body');
+          if (self.value === '미완') {
+            self.style.backgroundColor = 'yellow';
+            self.value = '진행';
+          } else if (self.value === '진행') {
+            self.style.backgroundColor = 'green';
+            self.value = '완료';
+          } else {
+            self.style.backgroundColor = 'red';
+            self.value = '미완';
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    </script>
+    <div class="">
+      <h1>숙제 리스트</h1>
+      <script type="text/javascript">
+        document.write("<h2>"+names.length+"</h2>");
+      </script>
+    </div>
+    <div class="container">
+      <table style="width: 100%;">
+        <tr>
+          <th>숙제 이름</th>
+          <th>진행</th>
+        </tr>
+          <script type="text/javascript">
+            names.forEach((item) => {
+              document.write("<tr><th>"+item+"</th><th><input type=button value=미완 onclick=Lists.hButton(this)></th></tr>");
+            });
+          </script>
+      </table>
+    </div>
+  </body>
+</html>
